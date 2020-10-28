@@ -1,0 +1,48 @@
+body{
+    text-align: center;
+}
+
+.parent-div {
+  margin: 100px auto 100px auto;
+
+  
+}
+
+.daniel-clifford {
+  position: absolute;
+
+}
+
+.jonathan-walters {
+  position: absolute;
+}
+
+.jeanette-harmon {
+  position: absolute;
+}
+
+.patric-abrams {
+  position: absolute;
+}
+
+.kira-whittle {
+  position: absolute;
+}
+
+
+.daniel-clifford-info{
+    clear: both;
+}
+/*
+    Styles for images 
+*/
+
+.daniel-clifford-img{
+    margin: 100px auto 100px auto;
+
+    width: 10%;
+
+}
+
+
+
