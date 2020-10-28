@@ -1,48 +1,175 @@
+
 body{
-    text-align: center;
+  margin: 130px;
+  font-family: sans-serif;
+  background-color: #f1f6f9;
 }
 
-.parent-div {
-  margin: 100px auto 100px auto;
 
-  
+.parent-div{
+  display: inline-block;
+  position: relative;
+  height: 50rem;
+  width: 75rem;
+  /* background-color: #f1f6f9; */
 }
 
 .daniel-clifford {
   position: absolute;
+  top:20px;
+  left:4rem;
+  width: 30rem;
+  padding: 2rem;
+  background-color: blueviolet;
+  border-radius: 2%;
 
 }
 
 .jonathan-walters {
   position: absolute;
+  top:20px;
+  left:40rem;
+  width: 12rem;
+  padding: 2rem;
+  background-color: #595b83;
+  border-radius: 2%;
 }
 
 .jeanette-harmon {
   position: absolute;
+  top:21rem;
+  left:4rem;
+  width: 11rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 2%;
 }
 
 .patric-abrams {
   position: absolute;
+  top:21rem;
+  left: 21rem;
+  width: 31rem;
+  padding: 2rem;
+  background-color: #14274e;
+  border-radius: 2%;
 }
+
+
 
 .kira-whittle {
   position: absolute;
+  top:20px;
+  left: 58rem;
+  width: 11rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 2%;
+
+}
+
+.title{
+  color: aliceblue;
+}
+
+.jeanette-title{
+  color: black;
 }
 
 
 .daniel-clifford-info{
-    clear: both;
+    color: #9ba4b4;
+    font-size: small;
+    font-weight: 100;
+}
+
+.daniel-clifford-info-highlight{
+  color: azure;
+}
+
+
+.jonathan-walters-info{
+  color: #9ba4b4;
+  font-size: small;
+  font-weight: 100;
+}
+
+.jonathan-walters-info-highlight{
+  color: azure;
+}
+
+
+.jeanette-harmon-info{
+  color: #9ba4b4;
+  font-size: small;
+  font-weight: 100;
+}
+
+.jeanette-harmon-info-highlight{
+  color:black;
+}
+
+.patric-abrams-info{
+    color: #9ba4b4;
+    font-size: small;
+    font-weight: 100;
+}
+
+.patric-abrams-info-highlight{
+  color: azure;
+}
+
+.kira-whittle-info{
+  color: #9ba4b4;
+  font-size: small;
+  font-weight: 100;
+}
+
+.kira-whittle-info-highlight{
+  color:black;
+}
+
+
+.verified{
+  color: #9ba4b4;
+  font-size: small;
 }
 /*
     Styles for images 
 */
 
 .daniel-clifford-img{
-    margin: 100px auto 100px auto;
-
-    width: 10%;
-
+    float: left;
+    width: 2rem;
+    margin-right: 1rem;
+    border-radius: 100%;
 }
 
+.jonathan-walters-img{
+  float: left;
+  margin-right: 1rem;
+  width: 2rem;
+  border-radius: 100%;
+}
 
+.jeanette-harmon-img{
+  float: left;
+  margin-right: 1rem;
+  width: 2rem;
+  border-radius: 100%;
+}
+
+.patric-abrams-img{
+  float: left;
+  margin-right: 1rem;
+  width: 2rem;
+  border-radius: 100%;
+}
+
+.kira-whittle-img{
+  float: left;
+  margin-right: 1rem;
+  width: 2rem;
+  border-radius: 100%;
+}
 
