@@ -1,4 +1,4 @@
 # Design Pattern Challenge By FrontEndMentor
 
-https://himsngh.github.io/Practice
+https://himsngh.github.io/WebDevelopmentPractice/
 
