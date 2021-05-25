@@ -26,7 +26,6 @@ app.post("/", (req, res) => {
     console.log(query)
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}&units=${units}`
 
-
     https.get(url, (response) => {
 
         if (response.statusCode < 400) {
