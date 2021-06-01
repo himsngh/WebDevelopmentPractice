@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Carousel from './Carousel';
+import ErrorBoundary from './ErrorBoundary';
+import ThemeContext from './ThemeContext';
+import Modal from './Model';
 
 // const Details = () => {
 //     return (
@@ -18,7 +21,7 @@ class Details extends Component {
     //     };
     // }
     // this is a shortcut for the above constructor; // but we have to add it in the babel and eslint config !!!!
-    state = { loading: true }
+    state = { loading: true, showModal: false }
 
     async componentDidMount() {
         const res = await fetch(
@@ -43,21 +46,47 @@ class Details extends Component {
         )
     }
 
+    toggleModa = () => this.setState({ showModal: !this.state.showModal });
+    adopt = () => (window.location = 'http://bit.ly/pet-adopt');
+
     render() {
 
         if (this.state.loading) {
             return <h2>Loading...</h2>
         }
 
-        const { animal, breed, name, city, state, description, images } = this.state;
+        const { animal, breed, name, city, state, description, images, showModal } = this.state;
         return (
             <div className="details">
                 <Carousel images={images} />
                 <div>
                     <h1>{name}</h1>
                     <h2>{`${animal} - ${breed} - ${city} - ${state}`}</h2>
-                    <button>Adopt {name}</button>
+
+                    {/* Another way to do it  */}
+                    <ThemeContext.Consumer>
+                        {
+                            ([theme]) => (
+                                <button
+                                    onClick={this.toggleModa}
+                                    style={{ backgroundColor: theme }}>Adopt {name}</button>
+                            )
+                        }
+                    </ThemeContext.Consumer>
                     <p>{description}</p>
+                    {
+                        showModal ? (
+                            <Modal>
+                                <div>
+                                    <h1>Would you like to adopt me.</h1>
+                                    <div className="buttons">
+                                        <button onClick={this.adopt}>Yes</button>
+                                        <button onClick={this.toggleModa}>No</button>
+                                    </div>
+                                </div>
+                            </Modal>
+                        ) : null
+                    }
                 </div>
             </div>
         )
@@ -65,4 +94,12 @@ class Details extends Component {
 }
 
 // withRouter will inject all the route information in the Details to use .
-export default withRouter(Details);
+const DetailsWithRouter = withRouter(Details);
+
+export default function DetailsWithErrorBoundary() {
+    return (
+        <ErrorBoundary>
+            <DetailsWithRouter />
+        </ErrorBoundary>
+    )
+}
