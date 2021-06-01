@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
-import Pet from './Pet';
+import useBreedList from './useBreedList';
+import Result from './Results';
 
 const ANIMALS = ["bird", "dog", "cat", "rabbit", "horse"];
 
@@ -20,11 +21,11 @@ const SearchParams = () => {
     const [animal, setAnimal] = useState("");
     const [breed, setBreed] = useState("");
     const [pets, setPets] = useState([]);
-    const breeds = [];
+    const [breedList] = useBreedList(animal);
 
     useEffect(() => {
         requestPets();
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     async function requestPets() {
         const res = await fetch(
@@ -40,7 +41,11 @@ const SearchParams = () => {
     return (
         // class cannot be used because class is keyword in javascript. 
         <div className="search-params">
-            <form>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    requestPets();
+                }} >
                 <label htmlFor="location">
                     Location
                     <input id="location"
@@ -78,30 +83,17 @@ const SearchParams = () => {
                     >
                         <option />
                         {
-                            breeds.map(breed => (
+                            breedList.map(breed => (
                                 <option value={breed} key={breed}>
-                                    {animal}
+                                    {breed}
                                 </option>
                             ))
-                        }
+                        },
                     </select>
                 </label>
                 <button>Submit</button>
             </form>
-            {
-                pets.map(pet => {
-                    return <Pet name={pet.name} animal={pet.animal} breed={pet.breed} key={pet.id} />
-                })
-            }
-
-            {/* {pets.map((pet) => (
-                <Pet
-                    name={pet.name}
-                    animal={pet.animal}
-                    breed={pet.breed}
-                    key={pet.id}
-                />
-            ))} */}
+            <Result pets={pets} />
         </div>
     )
 }
