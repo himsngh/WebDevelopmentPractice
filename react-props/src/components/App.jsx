@@ -20,8 +20,8 @@ function App() {
                 //  contacts.map((value) => (
                 //     <Card name={value.name} src={value.imgURL} phone={value.phone} email={value.email} />
                 // ))
-                // instead of curly braces and returning the card explicitely we can direclty write normal brackets and directly the return
-                // part and no need to explicitely return it 
+                // Since its a single line return statement we can directly return it without have to explicitely write return and the curly braces can also be omitted.
+               
 
             }
             {/* <Card name={contacts[0].name} src={contacts[0].imgURL} phone={contacts[0].phone} email={contacts[0].email} />
