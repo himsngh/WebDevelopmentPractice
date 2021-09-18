@@ -7,7 +7,7 @@ import Form from "./Form";
 
 // const time = new Date().getHours();
 
-let userIsRegistered = false
+let userIsRegistered = true
 
 function App() {
   return (
